@@ -1,0 +1,669 @@
+/* --- RESET & BASIC SETUP --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        /* --- NAVIGATION BAR --- */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%; /* Adjusts spacing from sides */
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05); 
+            position: fixed; /* Fixes the header to the viewport */
+            top: 0;          /* Positions it at the very top */
+            left: 0;         /* Ensures it spans the full width starting from the left edge */
+            width: 100%;     /* Guarantees full width */
+            z-index: 100; 
+        }
+
+        /* Logo Styling */
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #4b5563; /* Dark Grey for "& Associates" */
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: #1e3a8a; /* Navy Blue for "Sterling" */
+            font-weight: 800;
+        }
+
+        /* Nav Links */
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+            align-items: center;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #4b5563;
+            font-weight: 600;
+            font-size: 16px;
+            padding-bottom: 5px;
+            transition: color 0.3s;
+        }
+
+        /* The 'Active' state (Home underline) */
+        nav ul li a.active {
+            color: #1e3a8a;
+            border-bottom: 2px solid #1e3a8a;
+        }
+
+        nav ul li a:hover {
+            color: #1e3a8a;
+        }
+
+        /* Header CTA Button */
+        .nav-btn {
+            background-color: #1e3a8a; /* Darker Navy */
+            color: white;
+            padding: 12px 24px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: background 0.3s;
+        }
+
+        .nav-btn:hover {
+            background-color: #172e6e;
+        }
+
+        .services-hero-section {
+            background: linear-gradient(135deg, #0f1c42 0%, #173373 100%);
+            min-height: 400px; 
+            
+            display: flex;
+            align-items: center; /* Vertically centers the content */
+            
+            /* Critical: Top Padding to clear the Fixed Header (150px is safe) */
+            padding: 150px 8% 60px; 
+            
+            position: relative;
+            /* No curve/wave effect needed for this page header */
+        }
+
+        .services-hero-content {
+            max-width: 900px;
+        }
+
+        .services-hero-section h1 {
+            color: white;
+            font-size: 50px;
+            line-height: 1.2;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .services-hero-section p {
+            color: #e5e7eb; /* Off-white for better readability */
+            font-size: 21px;
+            line-height: 1.6;
+            margin-bottom: 0;
+            max-width: 800px;
+        }
+
+        /* PRACTICE AREAS SECTION */
+        .container {
+            width: 100%; /* Use a flexible width */
+            max-width: 1200px; /* Max width to prevent content from stretching too wide */
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 15px; /* Side padding for mobile */
+            padding-right: 15px; /* Side padding for mobile */
+        }
+
+        .practice-areas-section {
+            padding: 60px 0 80px;
+            margin-top: 10px;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            text-align: center;
+            color: #0f1c42;
+            margin-bottom: 10px;
+        }
+
+        .section-subtitle {
+            font-size: 1.19rem;
+            text-align: center;
+            color: #6c757d; /* Medium Gray */
+            max-width: 800px;
+            margin: 0 auto 50px;
+        }
+
+        .practice-grid {
+            display: grid;
+            /* Two columns on desktop */
+            grid-template-columns: repeat(2, 1fr); 
+            gap: 30px;
+        }
+
+        .service-card {
+            background-color: #ffffff;
+            border: 1px solid #e9ecef; /* Very light gray border */
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-card:hover {            
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .icon-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .card-icon {
+            font-size: 3rem;
+            width: auto;
+            height: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 15px;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #0f1c42;
+            margin: 0;
+        }
+
+        .card-description {
+            color: #6c757d;
+            margin-bottom: 25px;
+            line-height: 1.5;
+        }
+
+        .services-include-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #0f1c42;
+            border-bottom: 1px solid #e9ecef; /* Light gray separator line */
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+
+        .service-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* Two columns for list items */
+            gap: 10px 20px;
+            margin-bottom: 25px;
+            flex-grow: 1; 
+        }
+
+        .service-list li {
+            font-size: 0.95rem;
+            color: #495057; /* Dark Gray for list text */
+        }
+
+        .service-list li i {
+            color: #4a6ee0; /* Bright Accent Blue checkmark */
+            margin-right: 8px;
+        }
+
+        /* Button Styling  */
+        .button-secondary {
+            background-color: #2563eb;
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            border-radius: 8px;
+            width: 100%; 
+            text-align: center;
+            text-decoration: none;
+            margin-top: auto;
+            transition: background-color 0.3s ease;
+        }
+
+        .button-secondary:hover {
+            background-color: #1d4ed8;
+        }
+        
+        /* Typography */
+        .legal-container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 0; /* Vertical padding for the section */
+        }
+
+        .section-title {
+            font-size: 2.5rem; /* ~40px */
+            font-weight: 800;
+            color: #0f1c42;
+            text-align: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.3rem; /* ~20px */
+            color: #6c757d; /* Muted gray text */
+            text-align: center;
+            margin-bottom: 3rem;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .step-title {
+            font-size: 1.18rem;
+            font-weight: 700;
+            color: #212529;
+            margin-bottom: 0.5rem;
+        }
+
+        .step-description {
+            font-size: 1rem;
+            color: #6c757d;
+        }
+
+        /* Grid Layout for Steps (Responsive CSS Grid) */
+        .process-grid {
+            display: grid;
+            grid-template-columns: 1fr; /* Default to one column for mobile */
+            gap: 1rem;
+            text-align: center;
+        }
+
+        /* Step Circle Styling */
+        .step-circle {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background-color: #0b73e3; /* Bright blue color */
+            color: white;
+            font-size: 1.6rem;
+            font-weight: 700;
+        }
+
+        /* Step Card Styling (Optional, but adds a clean look) */
+        .process-step {
+            padding: 1.2rem;
+            background-color: white;
+            border-radius: 8px;
+        }
+
+        /* WHY CHOOSE SECTION */
+        .choose-container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 0; /* Vertical padding for the section */
+        }
+
+        /* Main Grid/Flex Layout for Desktop */
+        .choose-content-layout {
+            display: flex;
+            flex-direction: row; /* Stack columns vertically on mobile */
+            justify-content: space-between;
+            gap: 40px; /* Space between the two main columns */
+        }
+
+        /* Typography */
+        .choose-section-title {
+            font-size: 2.1rem; 
+            font-weight: 800;
+            color: #0f1c42;
+            margin-bottom: 2rem;
+            line-height: 1.1;
+        }
+
+        /* Reason/Bullet Point Styling */
+        .reason-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+        }
+        
+        .check-icon {
+            color: #2563eb; /* Bright Blue, matching the screenshot */
+            font-size: 24px;
+            margin-right: 15px;
+            margin-top: 3px; 
+        }
+
+        .reason-item h4 {
+            font-size: 1.12rem;
+            font-weight: 600;
+            color: #212529;
+            margin: 0 0 5px 0;
+        }
+
+        .reason-item p {
+            font-size: 1rem;
+            color: #61686f;
+            margin: 0;
+            line-height: 1.4;
+        }
+
+        /* Card Styling (Right Column) */
+        .choose-card-wrapper {
+            flex: 1;
+            max-width: 50%; 
+            margin-top: -2rem;
+        }
+
+        .choose-card {
+            background-color: #f0f5f8; /* Light gray/off-white background */
+            border-radius: 8px;
+            padding: 35px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.03); /* Very subtle shadow */
+        }
+
+        .choose-card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #0f1c42; /* Using your requested dark color */
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        .choose-card p {
+            font-size: 1rem;
+            color: #4b5563; /* Using your requested dark color */
+            line-height: 1.6;
+            margin-bottom: 17px; /* Increased spacing before the list/button */
+        }
+
+        .choose-list .reason-item {
+            margin-bottom: 0.75rem; 
+        }
+
+        .choose-card .check-icon {
+            color: #007bff; /* This colors the icon blue */
+            margin-right: 15px;
+            flex-shrink: 0;
+            line-height: 1.5rem;
+        }
+
+        .choose-card .check-svg {
+            width: 20px;
+            height: 20px;
+            fill: #007bff; /* We can explicitly set the fill here */
+        }
+        
+        /* Button Styling */
+        .schedule-button {
+            display: inline-block;
+            background-color: #007bff; /* Primary Blue */
+            color: white;
+            font-size: 1rem;
+            font-weight: 600;
+            padding: 12px 40px;
+            border-radius: 6px;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.1s ease;
+            width: 50%; /* Full width within the card */
+        }
+
+        .schedule-button:hover {
+            background-color: #0056b3;
+        }
+
+        /* --- 6. CALL TO ACTION (CTA) SECTION --- */
+        .cta-section {
+            background-color: #fceeee; 
+            padding: 80px 0;
+            text-align: center;
+            border-top: 5px solid #d12525; 
+        }
+
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto; 
+            padding: 0 20px;
+        }
+
+        .cta-content h2 {
+            color: black;
+            font-size: 34px;
+            margin-bottom: 20px;
+        }
+
+        .cta-content p {
+            color: black;
+            font-size: 19px;
+            margin-bottom: 40px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        /* Primary Button (White with Blue Text) */
+        .btn-primary {
+            background-color: #d12525;
+            color: #ffffff;
+            padding: 15px 30px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 16px;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #9e1b1b; /* Slightly darker white on hover */
+        }
+
+        /* Secondary Button (Blue Outline with White Text) */
+        .btn-secondary {
+            background-color: transparent;
+            color: #d12525;
+            padding: 15px 30px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 16px;
+            border-radius: 6px;
+            border: 2px solid #d12525; 
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background-color: #d12525; 
+            color: #ffffff;
+        }
+
+        /* --- FOOTER STYLES --- */
+        footer {
+            background-color: #0f1c42; /* Dark Navy Blue background */
+            color: #e5e7eb; /* Off-white text color */
+            padding: 60px 8% 20px;
+            font-size: 15px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: flex-start;
+            gap: 120px;
+            max-width: 1200px;
+            margin: 0 auto 40px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Subtle divider */
+            padding-bottom: 40px;
+        }
+
+        .footer-col {
+            min-width: 180px; /* Prevents columns from getting too narrow */
+        }
+
+        /* Logo Styling in Footer (Reusing the main logo colors/structure) */
+        .footer-logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #ffffff; /* White for "Sterling" */
+            text-decoration: none;
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        .footer-logo span {
+            color: #93c5fd; /* Light Blue for "& Associates" (Reversed from header for contrast) */
+            font-weight: 700;
+        }
+
+        /* Info Column Details */
+        .info-col {
+            width: 350px; /* Fixed width for the main text block */
+            min-width: 350px;
+        }
+
+        .info-col p {
+            line-height: 1.6;
+            margin-bottom: 25px;
+            color: #b0b8c4;
+        }
+
+        .contact-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .contact-list li {
+            margin-bottom: 10px;
+        }
+
+        .contact-list li i {
+            color: #2563eb; /* Bright blue icon color */
+            margin-right: 10px;
+            width: 18px; /* Alignment fix */
+            text-align: center;
+        }
+
+        /* Link Columns (Quick Links, Practice Areas) - Keep them tight */
+        .link-col {
+            min-width: 150px; /* Ensure they don't shrink too much */
+        }
+
+        /* Link Columns (Quick Links, Practice Areas) */
+        .link-col h4 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 20px;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links li a {
+            text-decoration: none;
+            color: #b0b8c4;
+            display: block;
+            padding: 5px 0;
+            transition: color 0.3s;
+        }
+
+        .footer-links li a:hover {
+            color: #2563eb;
+        }
+
+        /* --- Footer Bottom Bar --- */
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 15px;
+            font-size: 14px;
+            color: #b0b8c4;
+        }
+
+        .footer-bottom p {
+            margin: 0;
+        }
+
+        .bottom-links a {
+            color: #b0b8c4;
+            text-decoration: none;
+            margin-left: 20px;
+            transition: color 0.3s;
+        }
+
+        .bottom-links a:hover {
+            color: #ffffff;
+        }
+
+        /* --- Responsive Adjustments for this section --- */
+        @media (max-width: 600px) {
+            .section-title {
+                font-size: 2rem;
+            }
+            .service-card {
+                padding: 25px;
+            }
+            .card-icon {
+                width: 45px;
+                height: 45px;
+                padding: 12px;
+                font-size: 1.3rem;
+            }
+            .service-card h3 {
+                font-size: 1.3rem;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .process-grid {
+                /* Now we use 4 columns horizontally starting from 768px */
+                grid-template-columns: repeat(4, 1fr); 
+            }
+            .content-layout {
+                flex-direction: row; /* Side-by-side columns on desktop */
+                justify-content: space-between;
+                align-items: flex-start; /* Align content to the top */
+            }
+            .reasons-column {
+                flex: 1; /* Takes up approximately 60% of space */
+                max-width: 65%; 
+            }
+            .cta-column {
+                flex-shrink: 0; /* Does not shrink */
+                width: 35%; /* Fixed width for the card, matching the screenshot scale */
+            }
+        }
+
+        @media (max-width: 992px) {    
+            .practice-grid {
+                grid-template-columns: 1fr; /* Single column on tablets/mobile */
+            }
+
+            .service-list {
+                grid-template-columns: 1fr; /* Single column for list items on smaller mobile screens */
+            }
+        }

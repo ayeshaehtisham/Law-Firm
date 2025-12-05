@@ -1,0 +1,239 @@
+/* --- RESET & BASIC SETUP --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #f9fafb;
+            overflow-x: hidden;
+        }
+
+        /* --- NAVIGATION BAR --- */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%; /* Adjusts spacing from sides */
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05); 
+            position: fixed; /* Fixes the header to the viewport */
+            top: 0;          /* Positions it at the very top */
+            left: 0;         /* Ensures it spans the full width starting from the left edge */
+            width: 100%;     /* Guarantees full width */
+            z-index: 100; 
+        }
+
+        /* Logo Styling */
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #4b5563; /* Dark Grey for "& Associates" */
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: #1e3a8a; /* Navy Blue for "Sterling" */
+            font-weight: 800;
+        }
+
+        /* Nav Links */
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+            align-items: center;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #4b5563;
+            font-weight: 600;
+            font-size: 16px;
+            padding-bottom: 5px;
+            transition: color 0.3s;
+        }
+
+        /* The 'Active' state (Home underline) */
+        nav ul li a.active {
+            color: #1e3a8a;
+            border-bottom: 2px solid #1e3a8a;
+        }
+
+        nav ul li a:hover {
+            color: #1e3a8a;
+        }
+
+        /* Header CTA Button */
+        .nav-btn {
+            background-color: #1e3a8a; /* Darker Navy */
+            color: white;
+            padding: 12px 24px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: background 0.3s;
+        }
+
+        .nav-btn:hover {
+            background-color: #172e6e;
+        }
+
+        .attorneys-hero-section {
+            background: linear-gradient(135deg, #0f1c42 0%, #173373 100%);
+            min-height: 400px; 
+            
+            display: flex;
+            align-items: center; /* Vertically centers the content */
+            
+            /* Critical: Top Padding to clear the Fixed Header (150px is safe) */
+            padding: 150px 8% 60px; 
+            
+            position: relative;
+            /* No curve/wave effect needed for this page header */
+        }
+
+        .attorneys-hero-content {
+            max-width: 900px;
+        }
+
+        .attorneys-hero-section h1 {
+            color: white;
+            font-size: 50px;
+            line-height: 1.2;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .attorneys-hero-section p {
+            color: #e5e7eb; /* Off-white for better readability */
+            font-size: 21px;
+            line-height: 1.6;
+            margin-bottom: 0;
+            max-width: 850px;
+        }
+
+        /* --- FOOTER STYLES --- */
+        footer {
+            background-color: #0f1c42; /* Dark Navy Blue background */
+            color: #e5e7eb; /* Off-white text color */
+            padding: 60px 8% 20px;
+            font-size: 15px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: flex-start;
+            gap: 120px;
+            max-width: 1200px;
+            margin: 0 auto 40px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Subtle divider */
+            padding-bottom: 40px;
+        }
+
+        .footer-col {
+            min-width: 180px; /* Prevents columns from getting too narrow */
+        }
+
+        /* Logo Styling in Footer (Reusing the main logo colors/structure) */
+        .footer-logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #ffffff; /* White for "Sterling" */
+            text-decoration: none;
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        .footer-logo span {
+            color: #93c5fd; /* Light Blue for "& Associates" (Reversed from header for contrast) */
+            font-weight: 700;
+        }
+
+        /* Info Column Details */
+        .info-col {
+            width: 350px; /* Fixed width for the main text block */
+            min-width: 350px;
+        }
+
+        .info-col p {
+            line-height: 1.6;
+            margin-bottom: 25px;
+            color: #b0b8c4;
+        }
+
+        .contact-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .contact-list li {
+            margin-bottom: 10px;
+        }
+
+        .contact-list li i {
+            color: #2563eb; /* Bright blue icon color */
+            margin-right: 10px;
+            width: 18px; /* Alignment fix */
+            text-align: center;
+        }
+
+        /* Link Columns (Quick Links, Practice Areas) - Keep them tight */
+        .link-col {
+            min-width: 150px; /* Ensure they don't shrink too much */
+        }
+
+        /* Link Columns (Quick Links, Practice Areas) */
+        .link-col h4 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 20px;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links li a {
+            text-decoration: none;
+            color: #b0b8c4;
+            display: block;
+            padding: 5px 0;
+            transition: color 0.3s;
+        }
+
+        .footer-links li a:hover {
+            color: #2563eb;
+        }
+
+        /* --- Footer Bottom Bar --- */
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 15px;
+            font-size: 14px;
+            color: #b0b8c4;
+        }
+
+        .footer-bottom p {
+            margin: 0;
+        }
+
+        .bottom-links a {
+            color: #b0b8c4;
+            text-decoration: none;
+            margin-left: 20px;
+            transition: color 0.3s;
+        }
+
+        .bottom-links a:hover {
+            color: #ffffff;
+        }

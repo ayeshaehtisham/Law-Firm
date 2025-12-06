@@ -82,7 +82,7 @@
             background-color: #172e6e;
         }
 
-        .attorneys-hero-section {
+        .contact-hero-section {
             background: linear-gradient(135deg, #0f1c42 0%, #173373 100%);
             min-height: 400px; 
             
@@ -96,11 +96,11 @@
             /* No curve/wave effect needed for this page header */
         }
 
-        .attorneys-hero-content {
+        .contact-hero-content {
             max-width: 900px;
         }
 
-        .attorneys-hero-section h1 {
+        .contact-hero-section h1 {
             color: white;
             font-size: 50px;
             line-height: 1.2;
@@ -108,7 +108,7 @@
             margin-bottom: 20px;
         }
 
-        .attorneys-hero-section p {
+        .contact-hero-section p {
             color: #e5e7eb; /* Off-white for better readability */
             font-size: 21px;
             line-height: 1.6;
@@ -208,15 +208,15 @@
         .submit-btn {
             background-color: #007bff; /* Dark Navy */
             color: white;
-            font-size: 1.1rem;
+            font-size: 1.3rem;
             font-weight: 600;
             padding: 15px 40px;
             border: none;
             cursor: pointer;
             border-radius: 6px; /* Rounded pill shape */
             transition: background-color 0.3s ease;
-            width: auto; /* Width adapts to content */
-            justify-self: start; /* Aligns button to the left */
+            width: 100%; /* Width adapts to content */
+            justify-self: center; /* Aligns button to the left */
         }
 
         .submit-btn:hover {
@@ -228,6 +228,7 @@
             flex: 2; 
             display: grid;
             gap: 20px;
+            margin-top: 55px;
         }
 
         .info-card {
@@ -241,17 +242,15 @@
         .info-card .icon-container {
             width: 50px;
             height: 50px;
-            background-color: #007bff; /* Primary Blue Accent */
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             margin-bottom: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         .info-card i {
             color: white;
-            font-size: 1.2rem;
+            font-size: 2.2rem;
         }
 
         .info-card h4 {
@@ -269,7 +268,7 @@
         }
         
         .info-card strong {
-             color: #1f2937;
+            color: #1f2937;
         }
 
         /* --- Map Placeholder Section --- */
@@ -285,17 +284,11 @@
             margin-bottom: 30px;
         }
 
-        .map-placeholder {
+        .map {
             width: 100%;
             height: 400px;
-            background-color: #e5e7eb; /* Light gray to simulate map area */
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            color: #9ca3af;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border-radius: 15px;
+            object-fit: cover;
         }
 
         /* --- FOOTER STYLES --- */
@@ -421,6 +414,52 @@
         }
 
         /* --- Responsiveness --- */
+        @media (max-width: 500px) {
+            .contact-section {
+                padding: 40px 15px;
+            }
+            .section-title {
+                font-size: 2.2rem;
+            }
+            .info-card {
+                padding: 20px;
+            }
+        }
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 20px;
+            }
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .hero h1 {
+                font-size: 36px;
+            }
+            .hero-buttons {
+                flex-direction: column;
+            }
+            .footer-content {
+                flex-wrap: wrap;
+            }
+            .info-col {
+                min-width: 100%;
+                max-width: 100%;
+                margin-bottom: 30px;
+            }
+            .link-col {
+                min-width: 45%; /* Two columns side-by-side */
+            }
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+                gap: 10px;
+            }
+            .bottom-links a {
+                margin: 0 10px;
+            }
+        } 
         @media (max-width: 992px) {
             .content-layout {
                 flex-direction: column; /* Stack columns vertically */
@@ -438,16 +477,5 @@
             .submit-btn {
                 width: 100%; /* Make button full width on mobile */
                 justify-self: stretch;
-            }
-        }
-        @media (max-width: 500px) {
-            .contact-section {
-                padding: 40px 15px;
-            }
-            .section-title {
-                font-size: 2.2rem;
-            }
-            .info-card {
-                padding: 20px;
             }
         }

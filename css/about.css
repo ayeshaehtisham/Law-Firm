@@ -205,9 +205,9 @@
         }
 
         .section-header .subtitle {
-            font-size: 18px;
+            font-size: 20px;
             color: #6b7280;
-            max-width: 700px;
+            max-width: 1000px;
             margin: 0 auto;
         }
 
@@ -257,15 +257,14 @@
 
         /* --- 5. OUR JOURNEY (TIMELINE) SECTION --- */
         .our-journey-section {
-            padding: 100px 0;
-            background-color: #f9fafb;
+            padding: 65px 0;
         }
 
         .timeline {
             position: relative;
             max-width: 1200px; /* Constrain timeline width */
             margin: 0 auto;
-            padding-top: 50px; /* Space from the section header */
+            padding-top: 40px; /* Space from the section header */
         }
 
         /* The vertical line itself */
@@ -322,7 +321,6 @@
         .timeline-item.right::before {
             left: -9px; /* Position dot on the left edge of the right card, on the line */
         }
-
 
         /* Content card styling */
         .timeline-content {

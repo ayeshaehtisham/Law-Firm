@@ -116,6 +116,188 @@
             max-width: 850px;
         }
 
+        /* --- Main Content Layout --- */
+        .contact-section {
+            padding: 80px 20px;
+        }
+
+        .contact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title {
+            font-size: 2.8rem; 
+            font-weight: 800;
+            color: #0f1c42; /* Dark Navy */
+            margin-bottom: 10px;
+        }
+        
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: #61686f; 
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* --- Two-Column Layout (Desktop) --- */
+        .content-layout {
+            display: flex;
+            gap: 60px;
+            align-items: flex-start; /* Aligns content to the top */
+            margin-bottom: 80px;
+        }
+        
+        /* Left Column: Form (approx 60% width) */
+        .form-column {
+            flex: 3; 
+            background-color: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .form-column h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #0f1c42;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        .form-column p {
+            color: #61686f;
+            margin-bottom: 30px;
+        }
+
+        /* Form Styling */
+        .contact-form {
+            display: grid;
+            gap: 20px;
+        }
+
+        .form-input, .form-textarea {
+            width: 100%;
+            padding: 15px 20px;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px; /* Slightly rounded corners for inputs */
+            font-family: inherit;
+            font-size: 1rem;
+            color: #1f2937;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+            box-sizing: border-box;
+        }
+
+        .form-input:focus, .form-textarea:focus {
+            border-color: #007bff;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+        }
+
+        .form-textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        /* Submit Button Styling (Pill shape, Dark Navy) */
+        .submit-btn {
+            background-color: #007bff; /* Dark Navy */
+            color: white;
+            font-size: 1.1rem;
+            font-weight: 600;
+            padding: 15px 40px;
+            border: none;
+            cursor: pointer;
+            border-radius: 6px; /* Rounded pill shape */
+            transition: background-color 0.3s ease;
+            width: auto; /* Width adapts to content */
+            justify-self: start; /* Aligns button to the left */
+        }
+
+        .submit-btn:hover {
+            background-color: #0056b3;
+        }
+        
+        /* Right Column: Info Cards (approx 40% width) */
+        .info-column {
+            flex: 2; 
+            display: grid;
+            gap: 20px;
+        }
+
+        .info-card {
+            background-color: white; /* White cards on light background */
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            text-align: left;
+        }
+
+        .info-card .icon-container {
+            width: 50px;
+            height: 50px;
+            background-color: #007bff; /* Primary Blue Accent */
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+        }
+
+        .info-card i {
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .info-card h4 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #0f1c42;
+            margin: 0 0 8px 0;
+        }
+
+        .info-card p {
+            color: #61686f;
+            line-height: 1.6;
+            margin: 0;
+            font-size: 1rem;
+        }
+        
+        .info-card strong {
+             color: #1f2937;
+        }
+
+        /* --- Map Placeholder Section --- */
+        .map-section {
+            padding: 0 20px 80px;
+            text-align: center;
+        }
+        
+        .map-section h2 {
+            font-size: 2rem; 
+            font-weight: 700;
+            color: #0f1c42;
+            margin-bottom: 30px;
+        }
+
+        .map-placeholder {
+            width: 100%;
+            height: 400px;
+            background-color: #e5e7eb; /* Light gray to simulate map area */
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #9ca3af;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
         /* --- FOOTER STYLES --- */
         footer {
             background-color: #0f1c42; /* Dark Navy Blue background */
@@ -236,4 +418,36 @@
 
         .bottom-links a:hover {
             color: #ffffff;
+        }
+
+        /* --- Responsiveness --- */
+        @media (max-width: 992px) {
+            .content-layout {
+                flex-direction: column; /* Stack columns vertically */
+                gap: 40px;
+            }
+            .form-column {
+                flex: none; /* Reset flex weight */
+                width: 100%;
+                padding: 30px;
+            }
+            .info-column {
+                flex: none; /* Reset flex weight */
+                width: 100%;
+            }
+            .submit-btn {
+                width: 100%; /* Make button full width on mobile */
+                justify-self: stretch;
+            }
+        }
+        @media (max-width: 500px) {
+            .contact-section {
+                padding: 40px 15px;
+            }
+            .section-title {
+                font-size: 2.2rem;
+            }
+            .info-card {
+                padding: 20px;
+            }
         }

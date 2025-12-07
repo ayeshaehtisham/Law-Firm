@@ -248,9 +248,10 @@
             align-items: center;
         }
 
-        .info-card i {
-            color: white;
-            font-size: 2.2rem;
+        .value-icon {
+            font-size: 48px; /* Large emoji size */
+            margin-bottom: 10px;
+            display: inline-block;
         }
 
         .info-card h4 {

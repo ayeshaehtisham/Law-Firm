@@ -241,10 +241,9 @@
             line-height: 1.5;
         }
 
-        /* --- PRACTICE AREAS CONTENT --- */
         .practice-areas-content {
             background-color: #f9fafb; /* Matches the header background */
-            padding: 40px 8% 100px; 
+            padding: 30px 8% 100px; 
         }
 
         .cards-grid {
@@ -259,7 +258,6 @@
             background-color: #ffffff;
             padding: 30px;
             border-radius: 8px;
-            /* Subtle shadow to lift the card, matching the image */
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06); 
             transition: transform 0.3s, box-shadow 0.3s;
         }
@@ -272,7 +270,6 @@
         .icon-placeholder {
             width: 75px;
             height: 75px;
-            /* Centering the image inside the area */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -519,7 +516,7 @@
         }
 
         .bottom-links a:hover {
-            color: #ffffff;
+            color: #2563eb;
         }
 
         /* --- Responsive Design for smaller screens --- */

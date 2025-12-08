@@ -541,7 +541,7 @@
         }
 
         .bottom-links a:hover {
-            color: #ffffff;
+            color: #2563eb;
         }
 
         @media (max-width: 768px) {
